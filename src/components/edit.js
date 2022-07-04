@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const Edit = (props) => {
+  const [records, setRecords] = useState([])
 
   let emptyRecord = { id:props.id, title: '', artist: '', year:'', cover:'' }
   const [record, setRecord] = useState(emptyRecord)
@@ -15,27 +17,19 @@ const Edit = (props) => {
   }
 
 
-
   return (
     <>
       <details>
         <summary>Edit</summary>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Album Title: </label>
-          <input type="text" name="title" value={record.title} onChange={handleChange}/>
-          <br />
-          <br />
-          <label htmlFor="artist">Artist: </label>
-          <input type="text" name="artist" value={record.age} onChange={handleChange}/>
-          <br />
-          <br />
-          <label htmlFor="year">Release Year: </label>
-          <input type="number" name="year" value={record.year} onChange={handleChange}/>
-          <br />
-          <br />
-          <label htmlFor="cover">Album Art URL: </label>
-          <input type="text" name="cover" value={record.cover} onChange={handleChange}/>
-          <input type="submit" />
+          <input type="text" name="title" placeholder='album title' value={record.title} onChange={handleChange}/>
+          <br/>
+          <input type="text" name="artist" placeholder='artist' value={record.age} onChange={handleChange}/>
+          <br/>
+          <input type="number" name="year" placeholder='release year' value={record.year} onChange={handleChange}/>
+          <br/>
+          <input type="text" name="cover" placeholder='album art url' value={record.cover} onChange={handleChange}/>
+          <input className='btn btn-success'type="submit" />
         </form>
       </details>
     </>

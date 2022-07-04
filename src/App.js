@@ -67,26 +67,29 @@ const App = () => {
       <div className='d-flex flex-row text-center justify-content-center m-auto'>
         <img className='logo' src='https://i.imgur.com/U3gbIZP.png'/>
       </div>
-      <div className='d-flex justify-content-center'>
-        <button className='btn btn-success' onClick={handleToggleAddRecord}>
-          <h5 className='m-0'>Add Record to Collection</h5>
+      <div className='d-flex flex-column justify-content-center'>
+        <div className='text-center'>
+          <button className='btn btn-success p-2' onClick={handleToggleAddRecord}>
+          <h5 className='m-0'><span className='lnr lnr-chevron-down'/>Add Record to Collection<span className='lnr lnr-chevron-down'/></h5>
           </button>
-
+        </div>
+        <div className='text-center'>
           {toggleAddRecord ?
             <Add handleCreate={handleCreate}/>
             :null
           }
+        </div>
       </div>
       <div className='d-flex flex-row-reverse flex-wrap container justify-content-center'>
         {records.map((record)=>{
           return(
-            <div className='d-flex flex-column card text-center align-content-center justify-content-center m-auto bg-dark text-white' key={record.id}>
-              <h4>{record.title}</h4>
+            <div className='d-flex flex-column card text-center align-content-center justify-content-around p-1 m-1 bg-dark text-white' key={record.id}>
+              <h4><b><i>{record.title}</i></b></h4>
               <div className='cover'>
                 <img className='cover' src={record.cover}/>
               </div>
               <h4>{record.artist}</h4>
-              <h4>{record.year}</h4>
+              <h6>{record.year}</h6>
               <div>
                 <Edit handleUpdate={handleUpdate} id={record.id}/>
                 <button className='w-30 btn btn-danger' onClick={handleDelete} value = {record.id}>Delete</button>
@@ -95,8 +98,9 @@ const App = () => {
           )
         })}
       </div>
-      <div className='footer'>
-
+      <div className='footer d-flex flex-column text-center bg-light mt-3 pt-3'>
+        <h5>Designed and Built by</h5>
+        <h4>Matt Eckman</h4>
       </div>
     </>
   );

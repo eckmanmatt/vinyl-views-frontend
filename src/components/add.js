@@ -17,20 +17,21 @@ const Add = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="title" value={record.title} placeholder='New Album Title' onChange={handleChange} />
-        <br />
-        <br />
-        <input type="text" name="artist" value={record.artist} placeholder='New Album Artist' onChange={handleChange} />
-        <br />
-        <br />
-        <input type="number" name="year" value={record.year} placeholder='New Album Year' onChange={handleChange} />
-        <br />
-        <br />
-        <input type="text" name="cover" value={record.cover} placeholder='New Album Cover URL' onChange={handleChange} />
-        <br />
-        <input type="submit"/>
-      </form>
+        <form className='d-flex flex-column' onSubmit={handleSubmit}>
+          <div className='d-flex flex-row align-items-center justify-content-center'>
+          <input type="text" className='add m-1' name="title" value={record.title} placeholder='New Album Title' onChange={handleChange} />
+          <br/>
+          <input type="text" className='add m-1' name="artist" value={record.artist} placeholder='New Album Artist' onChange={handleChange} />
+          <br/>
+          <input type="number" className='add m-1' name="year" value={record.year} placeholder='New Album Year' onChange={handleChange} />
+          <br/>
+          <input type="text" className='add m-1' name="cover" value={record.cover} placeholder='New Album Cover URL' onChange={handleChange} />
+          </div>
+          <br/>
+          <div className=''>
+          <input className='btn btn-success' type="submit"/>
+          </div>
+        </form>
     </>
   )
 }
