@@ -18,20 +18,17 @@ const Add = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Album Title: </label>
-        <input type="text" name="title" value={record.title} onChange={handleChange} />
+        <input type="text" name="title" value={record.title} placeholder='New Album Title' onChange={handleChange} />
         <br />
         <br />
-        <label htmlFor="artist">Artist: </label>
-        <input type="text" name="artist" value={record.artist} onChange={handleChange} />
+        <input type="text" name="artist" value={record.artist} placeholder='New Album Artist' onChange={handleChange} />
         <br />
         <br />
-        <label htmlFor="year">Release Year: </label>
-        <input type="number" name="year" value={record.year} onChange={handleChange} />
+        <input type="number" name="year" value={record.year} placeholder='New Album Year' onChange={handleChange} />
         <br />
         <br />
-        <label htmlFor="cover">Album Art URL: </label>
-        <input type="text" name="cover" value={record.cover} onChange={handleChange} />
+        <input type="text" name="cover" value={record.cover} placeholder='New Album Cover URL' onChange={handleChange} />
+        <br />
         <input type="submit"/>
       </form>
     </>

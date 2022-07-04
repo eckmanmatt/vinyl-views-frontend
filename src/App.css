@@ -1,3 +1,10 @@
+body{
+  background-image: url('https://i.imgur.com/nfUjMCL.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +12,24 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+img.cover{
+  width: 100px;
+  height: 100px;
+}
+
+.card{
+  border-radius: 5px;
+  justify-content: center;
+  width:22%;
+  height: 400px;
+  padding-top: 10px;
+  margin-top:10px;
+}
+.container{
+  padding-top: 10px;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {

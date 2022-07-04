@@ -19,7 +19,7 @@ const Edit = (props) => {
   return (
     <>
       <details>
-        <summary>Edit Record</summary>
+        <summary>Edit</summary>
         <form onSubmit={handleSubmit}>
           <label htmlFor="title">Album Title: </label>
           <input type="text" name="title" value={record.title} onChange={handleChange}/>

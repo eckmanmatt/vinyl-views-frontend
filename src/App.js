@@ -64,32 +64,39 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <h1>Vinyl Views</h1>
+      <div className='d-flex flex-row text-center justify-content-center m-auto'>
+        <img className='logo' src='https://i.imgur.com/U3gbIZP.png'/>
       </div>
-      <div>
-
-        {toggleAddRecord ?
-          <Add handleCreate={handleCreate}/>
-          :null
-        }
-        <button onClick={handleToggleAddRecord}>
-          <h2>add</h2>
+      <div className='d-flex justify-content-center'>
+        <button className='btn btn-success' onClick={handleToggleAddRecord}>
+          <h5 className='m-0'>Add Record to Collection</h5>
           </button>
 
+          {toggleAddRecord ?
+            <Add handleCreate={handleCreate}/>
+            :null
+          }
       </div>
-      <div>
+      <div className='d-flex flex-row-reverse flex-wrap container justify-content-center'>
         {records.map((record)=>{
           return(
-            <div className='record' key={record.id}>
+            <div className='d-flex flex-column card text-center align-content-center justify-content-center m-auto bg-dark text-white' key={record.id}>
               <h4>{record.title}</h4>
+              <div className='cover'>
+                <img className='cover' src={record.cover}/>
+              </div>
               <h4>{record.artist}</h4>
               <h4>{record.year}</h4>
-              <Edit handleUpdate={handleUpdate} id={record.id}/>
-              <button onClick={handleDelete} value = {record.id}>Delete</button>
+              <div>
+                <Edit handleUpdate={handleUpdate} id={record.id}/>
+                <button className='w-30 btn btn-danger' onClick={handleDelete} value = {record.id}>Delete</button>
+              </div>
             </div>
           )
         })}
+      </div>
+      <div className='footer'>
+
       </div>
     </>
   );
