@@ -20,15 +20,16 @@ const Edit = (props) => {
   return (
     <>
       <details>
-        <summary>Edit</summary>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="title" placeholder='album title' value={record.title} onChange={handleChange}/>
+        <summary className='btn btn-warning lnr lnr-pencil p-1'></summary>
+        <form className='p-1' onSubmit={handleSubmit}>
+          <input className='' type="text" name="title" placeholder='album title' value={record.title} onChange={handleChange} required/>
           <br/>
-          <input type="text" name="artist" placeholder='artist' value={record.age} onChange={handleChange}/>
+          <input type="text" name="artist" placeholder='artist' value={record.age} onChange={handleChange} required/>
           <br/>
-          <input type="number" name="year" placeholder='release year' value={record.year} onChange={handleChange}/>
+          <input type="number" name="year" placeholder='release year' value={record.year} onChange={handleChange} required/>
           <br/>
-          <input type="text" name="cover" placeholder='album art url' value={record.cover} onChange={handleChange}/>
+          <input type="text" name="cover" placeholder='album art url' value={record.cover} onChange={handleChange} required/>
+          <br/>
           <input className='btn btn-success'type="submit" />
         </form>
       </details>

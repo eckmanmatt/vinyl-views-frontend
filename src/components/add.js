@@ -15,17 +15,18 @@ const Add = (props) => {
   }
 
 
+
   return (
     <>
         <form className='d-flex flex-column' onSubmit={handleSubmit}>
           <div className='d-flex flex-row align-items-center justify-content-center'>
-          <input type="text" className='add m-1' name="title" value={record.title} placeholder='New Album Title' onChange={handleChange} />
+          <input type="text" className='add m-1' name="title" value={record.title} placeholder='New Album Title' onChange={handleChange} required/>
           <br/>
-          <input type="text" className='add m-1' name="artist" value={record.artist} placeholder='New Album Artist' onChange={handleChange} />
+          <input type="text" className='add m-1' name="artist" value={record.artist} placeholder='New Album Artist' onChange={handleChange} required/>
           <br/>
-          <input type="number" className='add m-1' name="year" value={record.year} placeholder='New Album Year' onChange={handleChange} />
+          <input type="number" className='add m-1' name="year" value={record.year} placeholder='New Album Year' onChange={handleChange} required/>
           <br/>
-          <input type="text" className='add m-1' name="cover" value={record.cover} placeholder='New Album Cover URL' onChange={handleChange} />
+          <input type="text" className='add m-1' name="cover" value={record.cover} placeholder='New Album Cover URL' onChange={handleChange} required/>
           </div>
           <br/>
           <div className=''>
